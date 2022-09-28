@@ -1,4 +1,4 @@
-If you want the rainbow, you have to deal with the rain.
+If you want the rainbow, you have to deal with the rain...
 
 *italic* (asterisks need to be adjacent)
 
