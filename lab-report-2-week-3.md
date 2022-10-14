@@ -61,7 +61,6 @@ class SearchEngine {
     }
 }
 ```
-    
 </details>
 
 ### Adding apple in the search list
