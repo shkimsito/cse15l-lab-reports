@@ -1,6 +1,7 @@
 # The Simplest Search Engine
 <details>
     <summary>Source Code</summary>
+    
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -57,4 +58,5 @@ class SearchEngine {
     }
 }
 ```
-</details>
+
+    </details>
