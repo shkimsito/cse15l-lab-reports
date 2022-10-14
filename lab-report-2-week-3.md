@@ -90,8 +90,7 @@ assertArrayEquals(new int[]{ 5, 4, 3 }, input3);
 1) testReverseInPlace(ArrayTests)
 arrays first differed at element [2]; expected:<3> but was:<5>
 ```
-Expects 
-- Bugs: Requires a temporary holding the variable so it doesn't get deleted.
+- Bugs
 ```
 int temp;
 for(int i = 0; i < arr.length/2; i += 1) {
@@ -99,6 +98,7 @@ for(int i = 0; i < arr.length/2; i += 1) {
   arr[i] = arr[(arr.length-1) - i];
   arr[(arr.length-1) - i] = temp;
 }
+- Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.
 ```
 
 ### List Methods
