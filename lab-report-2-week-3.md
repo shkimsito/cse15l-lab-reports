@@ -133,5 +133,5 @@ while(n.next != null) {
     n = n.next;
 }
 n.next = new Node(value, null);
-- Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration, so it keeps on going... 
 ```
+- Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration, so it keeps on going... 
