@@ -102,6 +102,36 @@ for(int i = 0; i < arr.length/2; i += 1) {
 ```
 
 ### List Methods
-- Input:
-- Symptom:
-- Bugs:
+- Input
+```
+@Test 
+    public void testPrepend() {
+        LinkedList list = new LinkedList();
+        list.append(0);
+        list.append(1);
+        list.append(2);
+        assertEquals(0, list.root.value);
+    }
+```
+- Symptom: Infinite loop upon adding 3rd element
+```
+JUnit version 4.13.2
+.E
+Time: 0.743
+There was 1 failure:
+1) testPrepend(LinkedListTests)
+org.junit.runners.model.TestTimedOutException: test timed out after 500 milliseconds
+        at app//LinkedList.append(LinkedListExample.java:43)
+        at app//LinkedListTests.testPrepend(LinkedListTests.java:10)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+```
+- Bugs: The node adding line should be written outside the while loop.
+```
+while(n.next != null) {
+    n = n.next;
+}
+n.next = new Node(value, null);
+- Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration, so it keeps on going... 
+```
