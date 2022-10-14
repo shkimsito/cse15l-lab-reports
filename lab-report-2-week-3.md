@@ -1,10 +1,5 @@
 # Lab Report 2
 ## Part 1 - The Simplest Search Engine
-<details>
-    <summary>
-        Source Code
-    </summary>
-    
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -61,7 +56,6 @@ class SearchEngine {
     }
 }
 ```
-</details>
 
 ### Adding apple in the search list
 ![Adding Apple](./7.png)
