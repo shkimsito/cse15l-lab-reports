@@ -127,7 +127,7 @@ public void testPrepend() {
     assertEquals(0, list.root.value);
 }
 ```
-- Symptom: Infinite loop upon adding 3rd element
+- Symptom: Infinite loop upon adding 3rd element.
 ```
 JUnit version 4.13.2
 .E
@@ -137,7 +137,6 @@ There was 1 failure:
 org.junit.runners.model.TestTimedOutException: test timed out after 500 milliseconds
         at app//LinkedList.append(LinkedListExample.java:43)
         at app//LinkedListTests.testPrepend(LinkedListTests.java:10)
-
 FAILURES!!!
 Tests run: 1,  Failures: 1
 ```
@@ -148,4 +147,4 @@ while(n.next != null) {
 }
 n.next = new Node(value, null);
 ```
-- Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration.
+- Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration..!
