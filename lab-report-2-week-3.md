@@ -80,8 +80,29 @@ assertArrayEquals(new int[]{ 5, 4, 3 }, input3);
 ```
 - Symptom
 ```
+JUnit version 4.13.2
+.E
+Time: 0.003
+There was 1 failure:
 1) testReverseInPlace(ArrayTests)
-arrays first differed at element [2]; expected:<3> but was:<5>
+arrays first differed at element [1]; expected:<3> but was:<4>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:418)
+        at org.junit.Assert.assertArrayEquals(Assert.java:429)
+        at ArrayTests.testReverseInPlace(ArrayTests.java:13)
+        ... 32 trimmed
+Caused by: java.lang.AssertionError: expected:<3> but was:<4>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
+        ... 38 more
+FAILURES!!!
+Tests run: 1,  Failures: 1
 ```
 - Bugs
 ```
@@ -91,20 +112,20 @@ for(int i = 0; i < arr.length/2; i += 1) {
   arr[i] = arr[(arr.length-1) - i];
   arr[(arr.length-1) - i] = temp;
 }
-- Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.
 ```
+- Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.```
 
 ### List Methods
 - Input
 ```
 @Test 
-    public void testPrepend() {
-        LinkedList list = new LinkedList();
-        list.append(0);
-        list.append(1);
-        list.append(2);
-        assertEquals(0, list.root.value);
-    }
+public void testPrepend() {
+    LinkedList list = new LinkedList();
+    list.append(0);
+    list.append(1);
+    list.append(2);
+    assertEquals(0, list.root.value);
+}
 ```
 - Symptom: Infinite loop upon adding 3rd element
 ```
