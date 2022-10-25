@@ -1,7 +1,6 @@
 # Lab Report 2
 ## Part 1 - The Simplest Search Engine
-```
-import java.io.IOException;
+```import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +53,7 @@ class SearchEngine {
 
         Server.start(port, new Handler());
     }
-}
-```
+}```
 
 ### Adding apple in the search list
 ![Adding Apple](./7.png)
@@ -103,34 +101,28 @@ Caused by: java.lang.AssertionError: expected:<3> but was:<4>
         ... 38 more
 
 FAILURES!!!
-Tests run: 1,  Failures: 1
-```
+Tests run: 1,  Failures: 1```
 - Bugs
-```
-int temp;
+```int temp;
 for(int i = 0; i < arr.length/2; i += 1) {
   temp = arr[i];
   arr[i] = arr[(arr.length-1) - i];
   arr[(arr.length-1) - i] = temp;
 }
-- Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.
-```
+- Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.```
 
 ### List Methods
 - Input
-```
-@Test 
+```@Test 
     public void testPrepend() {
         LinkedList list = new LinkedList();
         list.append(0);
         list.append(1);
         list.append(2);
         assertEquals(0, list.root.value);
-    }
-```
+    }```
 - Symptom: Infinite loop upon adding 3rd element
-```
-JUnit version 4.13.2
+```JUnit version 4.13.2
 .E
 Time: 0.743
 There was 1 failure:
@@ -140,13 +132,10 @@ org.junit.runners.model.TestTimedOutException: test timed out after 500 millisec
         at app//LinkedListTests.testPrepend(LinkedListTests.java:10)
 
 FAILURES!!!
-Tests run: 1,  Failures: 1
-```
+Tests run: 1,  Failures: 1```
 - Bugs: The node adding line should be written outside the while loop.
-```
-while(n.next != null) {
+```while(n.next != null) {
     n = n.next;
 }
-n.next = new Node(value, null);
-```
+n.next = new Node(value, null);```
 - Symptom explained by Bug: If the element is more than 2, the while loop enters but it adds a new node at every iteration, so it keeps on going... 
