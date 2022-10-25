@@ -81,7 +81,13 @@ assertArrayEquals(new int[]{ 5, 4, 3 }, input3);
 - Symptom
 ```
 1) testReverseInPlace(ArrayTests)
-arrays first differed at element [2]; expected:<3> but was:<5>
+arrays first differed at element [1]; expected:<3> but was:<4>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:418)
+        at org.junit.Assert.assertArrayEquals(Assert.java:429)
+        at ArrayTests.testReverseInPlace(ArrayTests.java:13)
 ```
 - Bugs
 ```
