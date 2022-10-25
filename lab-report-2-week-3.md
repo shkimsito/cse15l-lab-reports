@@ -78,7 +78,6 @@ int[] input3 = { 3, 4, 5 };
 ArrayExamples.reverseInPlace(input3);
 assertArrayEquals(new int[]{ 5, 4, 3 }, input3);
 ```
-
 - Symptom
 ```
 JUnit version 4.13.2
@@ -105,7 +104,6 @@ Caused by: java.lang.AssertionError: expected:<3> but was:<4>
 FAILURES!!!
 Tests run: 1,  Failures: 1
 ```
-
 - Bugs
 ```
 int temp;
@@ -114,6 +112,7 @@ for(int i = 0; i < arr.length/2; i += 1) {
   arr[i] = arr[(arr.length-1) - i];
   arr[(arr.length-1) - i] = temp;
 }
+```
 - Symptom explained by Bug: Last element is 5 because the first element didn't get swapped but rather got deleted while getting assign the last element. It is fixable by adding a temporary holding variable to use it for swapping.```
 
 ### List Methods
