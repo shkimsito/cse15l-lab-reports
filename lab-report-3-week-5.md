@@ -1,4 +1,4 @@
-# Researching Commands
+# Researching Commands - The `find` Command
 
 ## `find`
 ### -type
