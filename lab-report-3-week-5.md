@@ -1,7 +1,6 @@
-# Researching Commands - The `find` Command
+# Researching Commands - `find` Command
 
-## `find`
-### -type
+## -type
 Type option specifies whether the path should search for file, directory, symlink or device files.
 The type is specified as, f or d or l or c or s, which each signifies file/directory/link/device/socket respectively.
 
@@ -42,7 +41,7 @@ chris@Chriss-MacBook-Air technical % find * -type f
 ```
 The example shows all files (while excluding the directories) when searched on `./technical` as an asterisk. It is especially useful when one would want to list only the files to be outputed to run additional commands on those files.
 
-### -size \<N\>
+## -size \<N\>
 The size option specifies path size of exactly N, or at least N if appended by plus sign, at most N if appended by minus sign. The default unit is in 512 byte blocks, but unit can be changed with added suffixes as k for kilobytes, M for megabytes and G for gigabytes.
 
 ```
@@ -74,7 +73,7 @@ government/Gen_Account_Office/d01591sp.txt
 ```
 The example shows all files under `/technical` that is over 150 kibibytes. We can see several (out of many) fits the criteria. Such lowerbound can be useful to make sure if a certain file is larger than other files, which can be especially useful when the storage is limited and file size has limitations.
 
-### -exec \<cmd\>
+## -exec \<cmd\>
 The execute option executes the command on the list of files returned by find. The end of command must be indicated by an escaped semicolon (\;). In addition, the open/closed braclets `{}` within the command indicates where the found path should be appended.
 
 ```
