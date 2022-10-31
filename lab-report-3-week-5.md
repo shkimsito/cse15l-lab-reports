@@ -46,13 +46,33 @@ The example shows all files (while excluding the directories) when searched on `
 The size option specifies path size of exactly N, or at least N if appended by plus sign, at most N if appended by minus sign. The default unit is in 512 byte blocks, but unit can be changed with added suffixes as k for kilobytes, M for megabytes and G for gigabytes.
 
 ```
+chris@Chriss-MacBook-Air technical % find * -size 16033c        
+plos/pmed.0020232.txt
 ```
+The example shows file resulting exactly 16033 bytes. Although such specific size might have fewer real world uses, it can be useful when the size is known, or a specific/uniform size must be kept for certain files.
 
 ```
+chris@Chriss-MacBook-Air technical % find * -size -500c 
+government
+government/Alcohol_Problems
 ```
+The example shows all files under `/technical` that is under 500 bytes. We can see that only one file fits the criteria. As such, the upperbound can be useful to quickly search files that have lesser content when there are many files.
 
 ```
+chris@Chriss-MacBook-Air technical % find * -size +150k
+911report/chapter-13.4.txt
+911report/chapter-13.5.txt
+911report/chapter-3.txt
+government/About_LSC/commission_report.txt
+government/Env_Prot_Agen/multi102902.txt
+government/Env_Prot_Agen/bill.txt
+government/Env_Prot_Agen/tech_adden.txt
+government/Gen_Account_Office/GovernmentAuditingStandards_yb2002ed.txt
+government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
+government/Gen_Account_Office/pe1019.txt
+government/Gen_Account_Office/d01591sp.txt
 ```
+The example shows all files under `/technical` that is over 150 kibibytes. We can see several (out of many) fits the criteria. Such lowerbound can be useful to make sure if a certain file is larger than other files, which can be especially useful when the storage is limited and file size has limitations.
 
 ### -exec \<cmd\>
 The execute option executes the command on the list of files returned by find.
