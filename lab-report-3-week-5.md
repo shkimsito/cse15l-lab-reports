@@ -21,6 +21,12 @@ plos
 The find shows directories only when searched on `./technical` as an asterisk. This is useful when one is trying to see what types of directories are listed under the path while removing all the noisy outputs with paths with many files such as the `/technical`.
 
 ```
+chris@Chriss-MacBook-Air technical % find ?????? -type d
+biomed
+```
+On the otherhand if I wanted to search for a specific directory that is n-length long, I could just use the commandline patterns (six question marks in the example) to specify how length I'm looking for and let `find` output all directories of that length.
+
+```
 chris@Chriss-MacBook-Air technical % find * -type f
 911report/chapter-13.4.txt
 911report/chapter-13.5.txt
@@ -34,13 +40,32 @@ chris@Chriss-MacBook-Air technical % find * -type f
 911report/chapter-6.txt
 ...
 ```
-The find shows all files (while excluding the directories) when searched on ./technical as an asterisk. It is especially useful when one would want to list only the files to be outputed to run additional commands on those files.
+The example shows all files (while excluding the directories) when searched on `./technical` as an asterisk. It is especially useful when one would want to list only the files to be outputed to run additional commands on those files.
 
 ### -size \<N\>
+The size option specifies path size of exactly N, or at least N if appended by plus sign, at most N if appended by minus sign. The default unit is in 512 byte blocks, but unit can be changed with added suffixes as k for kilobytes, M for megabytes and G for gigabytes.
+
+```
+```
+
+```
+```
+
+```
+```
 
 ### -exec \<cmd\>
-For each of those options, give 3 examples of using it on files and directories from ./technical. Show each example as a code block that shows the command and its output, and write a sentence or two about what it’s doing and why it’s useful.
+The execute option executes the command on the list of files returned by find.
 
-That makes 9 total examples, three each for three different command-line options. Many commands like these have pretty sophisticated behavior possible – it can take years to be exposed to and learn all of the possible tricks and inner workings.
+```
+```
 
-To find information about the commands, a simple Web search like “find command-line options” will probably give decent results. There is also a built-in command on many systems called man (short for “manual”) that displays information about commands; you can use man grep, for example, to see a long listing of information about how grep works.
+```
+```
+
+```
+```
+
+
+---
+**References**: https://man7.org/linux/man-pages/man1/find.1.html
