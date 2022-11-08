@@ -22,4 +22,4 @@ Chosen task was "rename the new test to testSearchCount2 and change the query st
 For minor edits, however, I'd rather prefer vim.
 
 * What about the project or task might factor into your decision one way or another? (If nothing would affect your decision, say so and why!)
->If the project involves lots of coding and planning, I would rather port the files locally and work on my own system. However, if the project involves few lines of codes or edits, I would rather have VIM open and work directly from there.
+  >If the project involves lots of coding and planning, I would rather port the files locally and work on my own system. However, if the project involves few lines of codes or edits, I would rather have VIM open and work directly from there.
