@@ -5,10 +5,10 @@ Chosen task was "`Changing the name of the start parameter and its uses to base`
 `:` `%` `s` `/` `s` `t` `a` `r` `t` `/` `b` `a` `s` `e` `/` `g` `:` `w` `q`
 
 ![beforeVIM](./beforeVIM.png)
-*Before typing the command, the search shows 4 instances of "start" within the code.*
+> *Before typing the command, the search shows 4 instances of "start" within the code.*
 
 ![afterVIM](./afterVIM.png)
-*After the full command, it replaced all 4 of the instances of "start" within the code. No other mid changes were made.*
+> *After the full command, it replaced all 4 of the instances of "start" within the code. No other mid changes were made.*
 
 ## Part 2 - Comparing direct VIM vs. indirect VSCode+SCP
 Chosen task was "`rename the new test to testSearchCount2 and change the query string being tested to tax rather than taxation`". 
