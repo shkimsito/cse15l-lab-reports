@@ -5,8 +5,8 @@
 ## Part 2 - Comparing direct VIM edit vs. indirect VSCode+SCP edit
 Chosen task was "`rename the new test to testSearchCount2 and change the query string being tested to tax rather than taxation`". 
 
-> It took `2:06` minutes to edit with VScode on local and SCPing to remote to run there. <br>
-> It took `1:05` minutes to edit directly with vim on remote and running from there.
+> It took `2:06` minutes to edit with VScode locally. <br>
+> It took `1:05` minutes to edit with VIM on remote.
 
 * Which of these two styles would you prefer using if you had to work on a program that you were running remotely, and why?
 Even if the program were to run remotely, I would still prefer VScode because it allows me more functionality and I am more accustomed to it.
