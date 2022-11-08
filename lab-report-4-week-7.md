@@ -1,6 +1,7 @@
 # Lab Report 4
 ## Part 1 - Vim Tasks
-Chosen task was "`Changing the name of the start parameter and its uses to base`".
+Chosen task was "Changing the name of the start parameter and its uses to base".
+Below is the keystrokes used, which is using the global replacement command `:%s/start/base/g`.
 
 `:` `%` `s` `/` `s` `t` `a` `r` `t` `/` `b` `a` `s` `e` `/` `g` `:` `w` `q`
 
