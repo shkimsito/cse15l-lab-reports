@@ -18,8 +18,8 @@ Chosen task was "rename the new test to testSearchCount2 and change the query st
 > It took `2:06` minutes with VScode locally and SCPing, and `1:05` minutes with VIM on remote.
 
 * Which of these two styles would you prefer using if you had to work on a program that you were running remotely, and why?
- >Even if the program were to run remotely, I would still prefer VScode because it allows me more functionality and I am more accustomed to it.
+  >Even if the program were to run remotely, I would still prefer VScode because it allows me more functionality and I am more accustomed to it.
 For minor edits, however, I'd rather prefer vim.
 
-* What about the project or task might factor into your decision one way or another? (If nothing would affect your decision, say so and why!)
- >If the project involves lots of coding and planning, I would rather port the files locally and work on my own system. However, if the project involves few lines of codes or edits, I would rather have VIM open and work directly from there.
+* What about the project or task might factor into your decision one way or another? <br> (If nothing would affect your decision, say so and why!)
+  >If the project involves lots of coding and planning, I would rather port the files locally and work on my own system. However, if the project involves few lines of codes or edits, I would rather have VIM open and work directly from there.
