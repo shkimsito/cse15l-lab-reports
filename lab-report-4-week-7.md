@@ -1,8 +1,14 @@
 # Lab Report 4
 ## Part 1 - Vim Tasks
+Chosen task was "`Changing the name of the start parameter and its uses to base`".
+
+[/][start][enter][c][e][base][esc][n][.][n][.][n][.][:][w][q][enter]
+`:``s``/``s``t``a``r``t``/``b``a``s``e``/``g`
+
+[/],[s],[t],[a],[r],[t],[enter],[c],[e],[b],[a],[s],[e],[esc],[n],[.],[n],[.],[:],[w],[q]
 
 
-## Part 2 - Comparing direct VIM edit vs. indirect VSCode+SCP edit
+## Part 2 - Comparing direct VIM vs. indirect VSCode+SCP
 Chosen task was "`rename the new test to testSearchCount2 and change the query string being tested to tax rather than taxation`". 
 
 > It took `2:06` minutes to edit with VScode locally. <br>
