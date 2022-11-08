@@ -3,7 +3,7 @@
 Chosen task was "`Changing the name of the start parameter and its uses to base`".
 
 [/][start][enter][c][e][base][esc][n][.][n][.][n][.][:][w][q][enter]
-`:``s``/``s``t``a``r``t``/``b``a``s``e``/``g`
+`:` `s` `/` `s` `t` `a` `r` `t` `/` `b` `a` `s` `e` `/` `g`
 
 [/],[s],[t],[a],[r],[t],[enter],[c],[e],[b],[a],[s],[e],[esc],[n],[.],[n],[.],[:],[w],[q]
 
