@@ -5,7 +5,7 @@ Type option specifies whether the path should search for file, directory, symlin
 The type is specified as, f or d or l or c or s, which each signifies file/directory/link/device/socket respectively.
 
 ```
-**chris@Chriss-MacBook-Air technical % find * -type d**
+chris@Chriss-MacBook-Air technical % find * -type d
 911report
 biomed
 government
