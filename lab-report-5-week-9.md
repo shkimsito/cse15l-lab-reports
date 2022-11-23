@@ -1,6 +1,7 @@
 # Lab Report 5
 ## grade.sh in codeblock
-`# Create your grading script here
+```
+# Create your grading script here
 # set -e
 
 rm -rf student-submission           # Clears previous submission
@@ -58,7 +59,7 @@ echo '----------------------------------------------------------'
 echo "Total score is ${SCORE}/5 points"
 
 # if [[ -e ListExamples.java ]]; then rm ListExamples.java; fi    # Removes copied java file
-`
+```
 
 ## Screenshots of 3 different submissions
 ![beforeVIM](./beforeVIM.png)
