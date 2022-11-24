@@ -1,5 +1,5 @@
 # Lab Report 5
-## Sourcecode of `grade.sh`
+## `grade.sh`
 ```
 # Create your grading script here
 # set -e
