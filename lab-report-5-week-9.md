@@ -1,5 +1,5 @@
 # Lab Report 5
-## Contents of `grade.sh`
+## `grade.sh` Sourcecode
 ```
 # Create your grading script here
 # set -e
@@ -62,16 +62,16 @@ echo "Total score is ${SCORE}/5 points"
 rm -f ListExamples.java   # Removes copied java file
 ```
 
-## Compile Error
+### Compile Error
 ![](./compile.png)
 ---
 **Before typing the command, the search shows 4 instances of "start" within the code.**
 
-## Filter Error
+### Filter Error
 ![](./filter.png)
 ---
 
-## Merge Error
+### Merge Error
 ![](./merge.png)
 ---
 **After the full command, it replaced all 4 of the instances of "start" within the code. No other mid changes were made.**
