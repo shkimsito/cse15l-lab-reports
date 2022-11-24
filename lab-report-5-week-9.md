@@ -62,7 +62,7 @@ echo "Total score is ${SCORE}/5 points"
 rm -f ListExamples.java   # Removes copied java file
 ```
 
-## Errors Caught by Autograder
+## Repos Tested by Autograder
 ### Compile Error
 ![](./compile.png)
 ---
