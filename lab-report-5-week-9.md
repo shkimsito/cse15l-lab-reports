@@ -62,19 +62,21 @@ echo "Total score is ${SCORE}/5 points"
 rm -f ListExamples.java   # Removes copied java file
 ```
 
+## Errors Caught by Autograder
 ### Compile Error
 ![](./compile.png)
 ---
-**Before typing the command, the search shows 4 instances of "start" within the code.**
+**Syntax error on script halts further testing.**
 
 ### Filter Error
 ![](./filter.png)
 ---
+**Code appends to front instead of back, resulting a different list**
 
 ### Merge Error
 ![](./merge.png)
 ---
-**After the full command, it replaced all 4 of the instances of "start" within the code. No other mid changes were made.**
+**Duplicate cases aren't considered for the implementation**
 
 ## Description of Trace for one submission (for each command, stdout/stderr/returncode)
 Chosen task was "rename the new test to testSearchCount2 and change the query string being tested to tax rather than taxation". 
