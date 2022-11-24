@@ -1,5 +1,5 @@
 # Lab Report 5
-## grade.sh in codeblock
+## Contents of `grade.sh`
 ```
 # Create your grading script here
 # set -e
@@ -7,6 +7,7 @@
 rm -rf student-submission           # Clears previous submission
 git clone $1 student-submission     # Clones new submission to local
 
+# Sample Submissions
 # https://github.com/ucsd-cse15l-f22/list-methods-lab3
 # https://github.com/ucsd-cse15l-f22/list-methods-corrected     ... fixed
 # https://github.com/ucsd-cse15l-f22/list-methods-compile-error ... syntax error
@@ -15,7 +16,7 @@ git clone $1 student-submission     # Clones new submission to local
 # https://github.com/ucsd-cse15l-f22/list-methods-nested        ... nested directory
 # https://github.com/ucsd-cse15l-f22/list-examples-subtle       ... subtle mistakes
 
-echo 'Grading..'
+echo "Grading Repo: $1 ..."
 echo '----------------------------------------------------------'
 SCORE=0;
 JPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
@@ -24,8 +25,8 @@ if [[ -e student-submission/ListExamples.java ]]; then
     echo '[+1 point] Submitted with correct file name and path!!'
     SCORE=$(( SCORE + 1 ))
     cp student-submission/ListExamples.java .
-    echo > CompileErrors.log # Clears log from previous
-    echo > TestErrors.log    # Clears log from previous
+    echo > CompileErrors.log # Clears log from previous if it exists
+    echo > TestErrors.log    # Clears log from previous if it exists
     javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log
     if [[ $? -eq 0 ]]; then
         SCORE=$(( SCORE + 1 ))
@@ -58,15 +59,20 @@ fi
 echo '----------------------------------------------------------'
 echo "Total score is ${SCORE}/5 points"
 
-# if [[ -e ListExamples.java ]]; then rm ListExamples.java; fi    # Removes copied java file
+rm -f ListExamples.java   # Removes copied java file
 ```
 
-## Screenshots of 3 different submissions
-![beforeVIM](./beforeVIM.png)
+## Compile Error
+![](./compile.png)
 ---
 **Before typing the command, the search shows 4 instances of "start" within the code.**
 
-![afterVIM](./afterVIM.png)
+## Filter Error
+![](./filter.png)
+---
+
+## Merge Error
+![](./merge.png)
 ---
 **After the full command, it replaced all 4 of the instances of "start" within the code. No other mid changes were made.**
 
