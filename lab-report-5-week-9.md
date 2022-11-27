@@ -78,8 +78,17 @@ rm -f ListExamples.java   # Removes copied java file
 ---
 **Duplicate cases aren't considered for the implementation**
 
-## Trace for `list-examples-subtle`
-Chosen task was "rename the new test to testSearchCount2 and change the query string being tested to tax rather than taxation". 
+## Trace for `list-methods-compile-error`
+
+`rm -rf student-submission`
+> stderr: none
+> stdout: none
+> return: zero
+`git clone $1 student-submission`
+> stderr: none
+> stdout: none
+> return: zero
+
 > It took `2:06` minutes with VScode locally and SCPing, and `1:05` minutes with VIM on remote.
 
 * Which of these two styles would you prefer using if you had to work on a program that you were running remotely, and why?
