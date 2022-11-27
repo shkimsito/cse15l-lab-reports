@@ -81,9 +81,7 @@ rm -f ListExamples.java   # Removes copied java file
 ## Trace for `list-methods-compile-error`
 
 `rm -rf student-submission`
-> stderr: none
-> stdout: none
-> return: zero
+> stderr: none <br> stdout: none <br> return: zero
 `git clone $1 student-submission`
 > stderr: none
 > stdout: none
