@@ -108,12 +108,9 @@ rm -f ListExamples.java   # Removes copied java file
     > stdout: none <br> stderr: none <br> return: zero
     
     `javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log`
-    > stdout: none <br> stderr: ListExamples.java:15: error: ';' expected
-        result.add(0, s)
-                        ^
-1 error <br> return: zero
-    
-    if [[ $? -eq 0 ]]; then
+    > stdout: none <br> stderr: ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
+    <br>                         ^ <br> 1 error <br> return: zero
+    `if [[ $? -eq 0 ]]; then`
         SCORE=$(( SCORE + 1 ))
         echo '[+1 point] File compiled with success!!'
         java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
