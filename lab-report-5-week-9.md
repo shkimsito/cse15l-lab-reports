@@ -82,17 +82,25 @@ rm -f ListExamples.java   # Removes copied java file
 
 `rm -rf student-submission`
 > stdout: none <br> stderr: none <br> return: zero
+
 `git clone $1 student-submission`
 > stdout: none <br> stderr: none <br> return: zero
+
 `echo "Grading Repo: $1 ..."`
 > stdout: Grading Repo: https://github.com/ucsd-cse15l-f22/list-methods-compile-error ... <br> stderr: none <br> return: zero
+
 `echo '----------------------------------------------------------'`
 > stdout: ---------------------------------------------------------- <br> stderr: none <br> return: zero
-if [[ -e student-submission/ListExamples.java ]]; then
+
+`if [[ -e student-submission/ListExamples.java ]]; then`
 > true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
-    echo '[+1 point] Submitted with correct file name and path!!'
-    SCORE=$(( SCORE + 1 ))
-    cp student-submission/ListExamples.java .
+
+    `echo '[+1 point] Submitted with correct file name and path!!'`
+    > stdout: [+1 point] Submitted with correct file name and path!! <br> stderr: none <br> return: zero
+    
+    `cp student-submission/ListExamples.java .`
+    > stdout: none <br> stderr: none <br> return: zero
+    
     echo > CompileErrors.log # Clears log from previous if it exists
     echo > TestErrors.log    # Clears log from previous if it exists
     javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log
