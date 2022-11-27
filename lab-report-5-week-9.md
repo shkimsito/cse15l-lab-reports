@@ -93,7 +93,7 @@ rm -f ListExamples.java   # Removes copied java file
 > stdout: ---------------------------------------------------------- <br> stderr: none <br> return: zero
 
 `if [[ -e student-submission/ListExamples.java ]]; then`
-> true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
+> Evaluates true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
 
     `echo '[+1 point] Submitted with correct file name and path!!'`
     > stdout: [+1 point] Submitted with correct file name and path!! <br> stderr: none <br> return: zero
@@ -101,9 +101,18 @@ rm -f ListExamples.java   # Removes copied java file
     `cp student-submission/ListExamples.java .`
     > stdout: none <br> stderr: none <br> return: zero
     
-    echo > CompileErrors.log # Clears log from previous if it exists
-    echo > TestErrors.log    # Clears log from previous if it exists
-    javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log
+    `echo > CompileErrors.log`
+    > stdout: none <br> stderr: none <br> return: zero
+    
+    `echo > TestErrors.log`
+    > stdout: none <br> stderr: none <br> return: zero
+    
+    `javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log`
+    > stdout: none <br> stderr: ListExamples.java:15: error: ';' expected
+        result.add(0, s)
+                        ^
+1 error <br> return: zero
+    
     if [[ $? -eq 0 ]]; then
         SCORE=$(( SCORE + 1 ))
         echo '[+1 point] File compiled with success!!'
