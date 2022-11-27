@@ -81,11 +81,54 @@ rm -f ListExamples.java   # Removes copied java file
 ## Trace for `list-methods-compile-error`
 
 `rm -rf student-submission`
-> stderr: none <br> stdout: none <br> return: zero
+> stdout: none <br> stderr: none <br> return: zero
 `git clone $1 student-submission`
-> stderr: none
-> stdout: none
-> return: zero
+> stdout: none <br> stderr: none <br> return: zero
+`echo "Grading Repo: $1 ..."`
+> stdout: Grading Repo: https://github.com/ucsd-cse15l-f22/list-methods-compile-error ... <br> stderr: none <br> return: zero
+`echo '----------------------------------------------------------'`
+> stdout: ---------------------------------------------------------- <br> stderr: none <br> return: zero
+if [[ -e student-submission/ListExamples.java ]]; then
+> true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
+    echo '[+1 point] Submitted with correct file name and path!!'
+    SCORE=$(( SCORE + 1 ))
+    cp student-submission/ListExamples.java .
+    echo > CompileErrors.log # Clears log from previous if it exists
+    echo > TestErrors.log    # Clears log from previous if it exists
+    javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log
+    if [[ $? -eq 0 ]]; then
+        SCORE=$(( SCORE + 1 ))
+        echo '[+1 point] File compiled with success!!'
+        java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
+        if grep -q 'testFilter' TestErrors.log; then
+            echo '[+0 point] Filter - Test failed.. check TestErrors.log for details'
+        else
+            SCORE=$(( SCORE + 1 ))
+            echo '[+1 point] Filter - Regular case success!!'
+        fi
+        if grep -q 'testMergeReg' TestErrors.log; then
+            echo '[+0 point] Merge - Regular case failed.. check TestErrors.log for details'
+        else
+            SCORE=$(( SCORE + 1 ))
+            echo '[+1 point] Merge - Regular case success!!'
+        fi
+        if grep -q testMergeDupe TestErrors.log; then
+            echo '[+0 point] Merge - Duplicate case failed.. check TestErrors.log for details'
+        else
+            SCORE=$(( SCORE + 1 ))
+            echo '[+1 point] Merge -  Duplicate case success!!'
+        fi
+    else
+        echo '[+0 point] Compile errors found. Check CompileErors.log'
+    fi
+else
+    echo '[+0 point] File not found, expected path is: student-submission/ListExamples.java'
+fi
+echo '----------------------------------------------------------'
+echo "Total score is ${SCORE}/5 points"
+
+rm -f ListExamples.java   # Removes copied java file
+
 
 > It took `2:06` minutes with VScode locally and SCPing, and `1:05` minutes with VIM on remote.
 
