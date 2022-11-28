@@ -103,13 +103,13 @@ rm -f ListExamples.java   # Removes copied java file
     
 `javac -cp $JPATH ListExamples.java TestListExamples.java`
 > **stdout**: none <br> **stderr**: 
-```
+>```
 ListExamples.java:15: error: ';' expected
         result.add(0, s)
                         ^
 1 error
 ```
-**return**: 1
+>**return**: 1
 
 `if [[ $? -eq 0 ]]; then`
 > **False**, javac returned non zero return code <br> **stdout**: none, **stderr**: none, **return**: zero
