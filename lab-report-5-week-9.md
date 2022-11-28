@@ -110,12 +110,11 @@ rm -f ListExamples.java   # Removes copied java file
 `javac -cp $JPATH ListExamples.java TestListExamples.java`
 > stdout: none <br> stderr: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^ <br> 1 error <br> return: 1
+
 `if [[ $? -eq 0 ]]; then`
 > **False**, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
 
-`echo '[+1 point] File compiled with success!!'`
-> stdout: [+1 point] File compiled with success!! <br> stderr: none <br> return: zero
-
+```echo '[+1 point] File compiled with success!!'
 java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
         if grep -q 'testFilter' TestErrors.log; then
             echo '[+0 point] Filter - Test failed.. check TestErrors.log for details'
@@ -134,7 +133,8 @@ java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
         else
             SCORE=$(( SCORE + 1 ))
             echo '[+1 point] Merge -  Duplicate case success!!'
-        fi
+        fi```
+> This block doesn't run at all due to false condition
     else
         echo '[+0 point] Compile errors found. Check CompileErors.log'
     fi
