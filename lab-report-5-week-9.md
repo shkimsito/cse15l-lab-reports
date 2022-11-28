@@ -112,7 +112,7 @@ ListExamples.java:15: error: ';' expected
 >**return**: 1
 
 `if [[ $? -eq 0 ]]; then`
-> **False**, javac returned non zero return code <br> **stdout**: none, **stderr**: none, **return**: zero
+> **False**, javac returned 1 (non zero) return code <br> **stdout**: none, **stderr**: none, **return**: zero
 
 ```
 echo '[+1 point] File compiled with success!!'
