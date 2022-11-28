@@ -109,7 +109,7 @@ rm -f ListExamples.java   # Removes copied java file
     
 `javac -cp $JPATH ListExamples.java TestListExamples.java`
 > stdout: none <br> stderr: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
-<br>                         ^ <br> 1 error <br> return: 1
+<br><pre>                         </pre>^ <br> 1 error <br> return: 1
 `if [[ $? -eq 0 ]]; then`
 > **False**, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
 
