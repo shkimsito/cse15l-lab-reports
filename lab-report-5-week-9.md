@@ -136,24 +136,23 @@ java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
             echo '[+1 point] Merge -  Duplicate case success!!'
         fi
 ```
-> This block doesn't run at all due to false condition
-    else
-        echo '[+0 point] Compile errors found. Check CompileErors.log'
-    fi
+> This block doesn't run due to false condition
+
+`echo '[+0 point] Compile errors found. Check CompileErors.log'`
+> stdout: [+0 point] Compile errors found. Check CompileErors.log <br> stderr: none <br> return: zero
+
+```
 else
     echo '[+0 point] File not found, expected path is: student-submission/ListExamples.java'
 fi
-echo '----------------------------------------------------------'
-echo "Total score is ${SCORE}/5 points"
+```
+> This block doesn't run due to false condition
 
-rm -f ListExamples.java   # Removes copied java file
+`echo '----------------------------------------------------------'`
+> stdout: ---------------------------------------------------------- <br> stderr: none <br> return: zero
 
+`echo "Total score is ${SCORE}/5 points"`
+> stdout: Total score is 1/5 points <br> stderr: none <br> return: zero
 
-> It took `2:06` minutes with VScode locally and SCPing, and `1:05` minutes with VIM on remote.
-
-* Which of these two styles would you prefer using if you had to work on a program that you were running remotely, and why?
-  >Even if the program were to run remotely, I would still prefer VScode because it allows me more functionality and I am more accustomed to it.
-For minor edits, however, I'd rather prefer vim.
-
-* What about the project or task might factor into your decision one way or another? <br> (If nothing would affect your decision, say so and why!)
-  >If the project involves lots of coding and planning, I would rather port the files locally and work on my own system. However, if the project involves few lines of codes or edits, I would rather have VIM open and work directly from there.
+`rm -f ListExamples.java`
+> stdout: none <br> stderr: none <br> return: zero
