@@ -136,7 +136,7 @@ java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
             echo '[+1 point] Merge -  Duplicate case success!!'
         fi
 ```
-> This block doesn't run due to false condition of `if [[ $? -eq 0 ]]; then` above.
+> **This block doesn't run due to false condition from if above.**
 
 `echo '[+0 point] Compile errors found. Check CompileErors.log'`
 > **stdout**: [+0 point] Compile errors found. Check CompileErors.log <br> **stderr**: none <br> **return**: zero
@@ -146,7 +146,7 @@ else
     echo '[+0 point] File not found, expected path is: student-submission/ListExamples.java'
 fi
 ```
-> This block doesn't run due to false condition of `if [[ $? -eq 0 ]]; then` above.
+> **This block doesn't run due to false condition from if above.**
 
 `echo '----------------------------------------------------------'`
 > **stdout**: ---------------------------------------------------------- <br> **stderr**: none <br> **return**: zero
