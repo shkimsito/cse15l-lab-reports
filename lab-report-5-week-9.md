@@ -93,27 +93,30 @@ rm -f ListExamples.java   # Removes copied java file
 > stdout: ---------------------------------------------------------- <br> stderr: none <br> return: zero
 
 `if [[ -e student-submission/ListExamples.java ]]; then`
-> Evaluates true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
+> **True**, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
 
-    `echo [+1 point] Submitted with correct file name and path!!`
-    > stdout: [+1 point] Submitted with correct file name and path!! <br> stderr: none <br> return: zero
+`echo [+1 point] Submitted with correct file name and path!!`
+> stdout: [+1 point] Submitted with correct file name and path!! <br> stderr: none <br> return: zero
+
+`cp student-submission/ListExamples.java .`
+> stdout: none <br> stderr: none <br> return: zero
+
+`echo > CompileErrors.log`
+> stdout: none <br> stderr: none <br> return: zero
+
+`echo > TestErrors.log`
+> stdout: none <br> stderr: none <br> return: zero
     
-    `cp student-submission/ListExamples.java .`
-    > stdout: none <br> stderr: none <br> return: zero
-    
-    `echo > CompileErrors.log`
-    > stdout: none <br> stderr: none <br> return: zero
-    
-    `echo > TestErrors.log`
-    > stdout: none <br> stderr: none <br> return: zero
-    
-    `javac -cp $JPATH ListExamples.java TestListExamples.java`
-    > stdout: none <br> stderr: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
-    <br>                         ^ <br> 1 error <br> return: zero
-    `if [[ $? -eq 0 ]]; then`
-        SCORE=$(( SCORE + 1 ))
-        echo '[+1 point] File compiled with success!!'
-        java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
+`javac -cp $JPATH ListExamples.java TestListExamples.java`
+> stdout: none <br> stderr: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
+<br>                         ^ <br> 1 error <br> return: 1
+`if [[ $? -eq 0 ]]; then`
+> **False**, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
+
+`echo '[+1 point] File compiled with success!!'`
+> stdout: [+1 point] File compiled with success!! <br> stderr: none <br> return: zero
+
+java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
         if grep -q 'testFilter' TestErrors.log; then
             echo '[+0 point] Filter - Test failed.. check TestErrors.log for details'
         else
