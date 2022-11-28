@@ -95,7 +95,7 @@ rm -f ListExamples.java   # Removes copied java file
 `if [[ -e student-submission/ListExamples.java ]]; then`
 > Evaluates true, because correct file name copied from list-methods-compile-error/ListExamples.java <br> stdout: none <br> stderr: none <br> return: zero
 
-    `echo '[+1 point] Submitted with correct file name and path!!'`
+    `echo [+1 point] Submitted with correct file name and path!!`
     > stdout: [+1 point] Submitted with correct file name and path!! <br> stderr: none <br> return: zero
     
     `cp student-submission/ListExamples.java .`
@@ -107,8 +107,8 @@ rm -f ListExamples.java   # Removes copied java file
     `echo > TestErrors.log`
     > stdout: none <br> stderr: none <br> return: zero
     
-    `javac -cp $JPATH ListExamples.java TestListExamples.java 2> CompileErrors.log`
-    > stdout: none <br> stderr: ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
+    `javac -cp $JPATH ListExamples.java TestListExamples.java`
+    > stdout: none <br> stderr: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
     <br>                         ^ <br> 1 error <br> return: zero
     `if [[ $? -eq 0 ]]; then`
         SCORE=$(( SCORE + 1 ))
