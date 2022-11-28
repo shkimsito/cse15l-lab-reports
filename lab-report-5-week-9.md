@@ -7,15 +7,6 @@
 rm -rf student-submission           # Clears previous submission
 git clone $1 student-submission     # Clones new submission to local
 
-# Sample Submissions
-# https://github.com/ucsd-cse15l-f22/list-methods-lab3
-# https://github.com/ucsd-cse15l-f22/list-methods-corrected     ... fixed
-# https://github.com/ucsd-cse15l-f22/list-methods-compile-error ... syntax error
-# https://github.com/ucsd-cse15l-f22/list-methods-signature     ... wrong order for filter
-# https://github.com/ucsd-cse15l-f22/list-methods-filename      ... wrong filename
-# https://github.com/ucsd-cse15l-f22/list-methods-nested        ... nested directory
-# https://github.com/ucsd-cse15l-f22/list-examples-subtle       ... subtle mistakes
-
 echo "Grading Repo: $1 ..."
 echo '----------------------------------------------------------'
 SCORE=0;
@@ -68,15 +59,18 @@ rm -f ListExamples.java   # Removes copied java file
 ---
 **Syntax error on script halts further testing.**
 
+
 ### Filter Error
 ![](./filter.png)
 ---
 **Code appends to front instead of back, resulting a different list**
 
+
 ### Merge Error
 ![](./merge.png)
 ---
 **Duplicate cases aren't considered for the implementation**
+
 
 ## Trace for `list-methods-compile-error`
 
