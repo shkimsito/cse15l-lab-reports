@@ -75,38 +75,42 @@ rm -f ListExamples.java   # Removes copied java file
 ## Trace for `list-methods-compile-error`
 
 `rm -rf student-submission`
-> **stdout**: none **stderr**: none **return**: 0
+> **stdout**: none, **stderr**: none, **return**: 0
 
 `git clone $1 student-submission`
-> **stdout**: none **stderr**: Cloning into 'student-submission'... **return**: 0
+> **stdout**: none, **stderr**: Cloning into 'student-submission'..., **return**: 0
 
 `echo "Grading Repo: $1 ..."`
-> **stdout**: Grading Repo: https://github.com/ucsd-cse15l-f22/list-methods-compile-error ... **stderr**: none **return**: 0
+> **stdout**: Grading Repo: https://github.com/ucsd-cse15l-f22/list-methods-compile-error ..., **stderr**: none, **return**: 0
 
 `echo '----------------------------------------------------------'`
-> **stdout**: ---------------------------------------------------------- **stderr**: none **return**: 0
+> **stdout**: ----------------------------------------------------------, **stderr**: none, **return**: 0
 
 `if [[ -e student-submission/ListExamples.java ]]; then`
-> **True**, correct file name copied from list-methods-compile-error/ListExamples.java <br> **stdout**: none **stderr**: none **return**: 0
+> **True**, correct file name copied from list-methods-compile-error/ListExamples.java <br> **stdout**: none, **stderr**: none, **return**: 0
 
 `echo [+1 point] Submitted with correct file name and path!!`
-> **stdout**: [+1 point] Submitted with correct file name and path!! **stderr**: none **return**: 0
+> **stdout**: [+1 point] Submitted with correct file name and path!!, **stderr**: none, **return**: 0
 
 `cp student-submission/ListExamples.java .`
-> **stdout**: none **stderr**: none **return**: 0
+> **stdout**: none, **stderr**: none, **return**: 0
 
 `echo > CompileErrors.log`
-> **stdout**: none **stderr**: none **return**: 0
+> **stdout**: none, **stderr**: none, **return**: 0
 
 `echo > TestErrors.log`
-> **stdout**: none **stderr**: none **return**: 0
+> **stdout**: none, **stderr**: none, **return**: 0
     
 `javac -cp $JPATH ListExamples.java TestListExamples.java`
-> **stdout**: none <br> **stderr**: <br> ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^ <br> 1 error <br> **return**: 1
+> **stdout**: none <br> **stderr**: 
+```
+ListExamples.java:15: error: ';' expected <br>         result.add(0, s)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^ <br> 1 error
+```
+**return**: 1
 
 `if [[ $? -eq 0 ]]; then`
-> **False**, javac returned non zero return code <br> **stdout**: none **stderr**: none **return**: zero
+> **False**, javac returned non zero return code <br> **stdout**: none, **stderr**: none, **return**: zero
 
 ```
 echo '[+1 point] File compiled with success!!'
@@ -133,7 +137,7 @@ java -cp $JPATH org.junit.runner.JUnitCore TestListExamples 1> TestErrors.log
 > **This block doesn't run due to false condition from if above.**
 
 `echo '[+0 point] Compile errors found. Check CompileErors.log'`
-> **stdout**: [+0 point] Compile errors found. Check CompileErors.log **stderr**: none **return**: zero
+> **stdout**: [+0 point] Compile errors found. Check CompileErors.log, **stderr**: none, **return**: zero
 
 ```
 else
@@ -143,10 +147,10 @@ fi
 > **This block doesn't run due to false condition from if above.**
 
 `echo '----------------------------------------------------------'`
-> **stdout**: ---------------------------------------------------------- **stderr**: none **return**: zero
+> **stdout**: ----------------------------------------------------------, **stderr**: none, **return**: zero
 
 `echo "Total score is ${SCORE}/5 points"`
-> **stdout**: Total score is 1/5 points **stderr**: none **return**: zero
+> **stdout**: Total score is 1/5 points, **stderr**: none, **return**: zero
 
 `rm -f ListExamples.java`
-> **stdout**: none **stderr**: none **return**: zero
+> **stdout**: none, **stderr**: none, **return**: zero
