@@ -54,19 +54,19 @@ rm -f ListExamples.java   # Removes copied java file
 ```
 
 ## Repos Tested by Autograder
-### Compile Error
+### Compile Error (`list-methods-compile-error`)
 ![](./compile.png)
 ---
-**Syntax error on script halts further testing.**
+**Syntax error within script halts further testing.**
 
 
-### Filter Error
+### Filter Error (`list-methods-lab3`)
 ![](./filter.png)
 ---
 **Code appends to front instead of back, resulting a different list**
 
 
-### Merge Error
+### Merge Error (`list-examples-subtle`)
 ![](./merge.png)
 ---
 **Duplicate cases aren't considered for the implementation**
