@@ -1,13 +1,13 @@
 # Lab Report 4
 ## Part 1 - Vim Tasks
 Chosen task was "Changing the name of the start parameter and its uses to base". <br>
-We will use the global replacement command `:%s/<old>/<new>/g`.
+We will use the global replacement command in `:%s/<old>/<new>/g` format.
 >The "s" stands for substitute, and substitutes first instance of <old> text to <new> text.<br>
 >The "g" stands for global, and makes substitution occur for every instance of the line.<br>
 >The "%" is a range specifier that referes to the 'entire contents of the file'.<br>
->Putting this all together, `:%s/start/base/g` will substitute every instance of "start" to "base" for the entire line for the entire file.
+>Putting this all together, `:%s/start/base/g` substitutes every instance of "start" to "base" for the entire line for the entire file.
 
-Below is the keystrokes used.
+Below are the keystrokes.
 
 `:` `%` `s` `/` `s` `t` `a` `r` `t` `/` `b` `a` `s` `e` `/` `g` `:` `w` `q`
 
